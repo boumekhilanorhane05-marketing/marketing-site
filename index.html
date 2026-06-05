@@ -3,53 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> DIGITAL MARKETING </title>
+    <title>معرض أعمالي الشخصي</title>
+    <!-- استيراد خط تجوال الاحترافي من جوجل -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            text-align: center;
-            padding: 50px;
+        /* إعدادات الموقع العامة المستوحاة من التصميم الداكن */
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #0f172a; /* خلفية داكنة فخمة */
+            color: #f8fafc;
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
         .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 600px;
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 20px;
         }
-        h1 {
-            color: #2c3e50;
+        
+        /* القائمة العلوية للهيدر */
+        header {
+            background-color: rgba(15, 23, 42, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #1e293b;
+            backdrop-filter: blur(10px);
         }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
-        .btn {
-            display: inline-block;
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #38bdf8; /* لون أزرق سماوي مضيء */
+        }
+        .nav-links a {
+            color: #94a3b8;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
+            margin-right: 20px;
+            font-size: 16px;
+            transition: color 0.3s;
         }
-        .btn:hover {
-            background-color: #2980b9;
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* القسم الترحيبي الأول (Hero Section) */
+        .hero {
+            padding: 100px 0 60px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .hero h1 span {
+            color: #38bdf8;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+        .btn-primary {
+            display: inline-block;
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 12px 30px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        /* أقسام الموقع المشتركة */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #1e293b;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #38bdf8;
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* شبكة عرض الخدمات أو المشاريع */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 30px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .card h3 {
+            margin-bottom: 15px;
+            color: #ffffff;
+            font-size: 22px;
+        }
+        .card p {
+            color: #94a3b8;
+            font-size: 15px;
+        }
+
+        /* تذييل الصفحة (Footer) */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #64748b;
+            font-size: 14px;
+        }
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* التوافق مع شاشات الهواتف */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .nav-links a {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- الهيدر والقائمة العلوية -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">موقعي الاحترافي</div>
+                <div class="nav-links">
+                    <a href="#about">من أنا</a>
+                    <a href="#services">خدماتي</a>
+                    <a href="#projects">مشاريعي</a>
+                    <a href="#contact">اتصل بي</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي الترحيبي -->
     <div class="container">
-        <h1>مرحباً بكم ! 🎉</h1>
-        <pDIGITAL MARKETING.</p>
-        <p> تطوير المواقع الإلكترونية وتهيئة محركات البحث (SEO) لبناء مشاريع رقمية مميزة.</p>
-        <a href="#" class="btn">تصفح خدماتنا</a>
+        <section class="hero">
+            <h1>أهلاً بكم، أنا NORHANE BOUMEKHILA متخصص في <span>التسويق الرقمي وتطوير المواقع</span></h1>
+            <p>أساعد الشركات والمشاريع الناشئة على بناء هوية رقمية قوية، وتطوير مواقع إلكترونية سريعة ومتوافقة تماماً مع معايير السيو (SEO) لزيادة المبيعات والانتشار.</p>
+            <a href="#contact" class="btn-primary">ابدأ مشروعك معي الآن</a>
+        </section>
     </div>
+
+    <!-- قسم الخدمات -->
+    <div class="container" id="services">
+        <section>
+            <h2 class="section-title">الخدمات التي أقدمها</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>تطوير وإدارة المواقع 🌐</h3>
+                    <p>بناء مواقع تعريفية ومتاجر إلكترونية متكاملة ومخصصة للمشاريع التجارية باستخدام أحدث التقنيات ونظام ووردبريس.</p>
+                </div>
+                <div class="card">
+                    <h3>تهيئة محركات البحث (SEO) 🚀</h3>
+                    <p>تحسين ظهور موقعك في نتائج البحث الأولى على جوجل، وتحسين الزحف والأرشفة (Crawling & Indexing) لضمان جلب زوار مستهدفين مجاناً.</p>
+                </div>
+                <div class="card">
+                    <h3>استراتيجيات التسويق الرقمي 📈</h3>
+                    <p>وضع خطط تسويقية متكاملة لإطلاق المشاريع، وإدارة الحملات الإعلانية الموجهة التي تضمن الوصول للعميل المثالي بكفاءة عالية.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- قسم المشاريع الحالية -->
+    <div class="container" id="projects">
+        <section>
+            <h2 class="section-title">أحدث المشاريع والخطط</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>منصة تجهيزات الفنادق والمطاعم 🍽️</h3>
+                    <p>مشروع موقع متكامل مخصص لعرض وتوريد المعدات الاحترافية للمحلات التجارية، الفنادق، والمطاعم الكبرى مع تجربة مستخدم سلسة.</p>
+                </div>
+                <div class="card">
+                    <h3>مدونة التطوير التقني والسيو 🧠</h3>
+                    <p>موقع لمشاركة المقالات المتخصصة في شرح خفايا السيو التقني وكيفية فهم نية البحث (Search Intent) للجمهور العربي.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- قسم التواصل -->
+    <div class="container" id="contact">
+        <section style="text-align: center;">
+            <h2 class="section-title">لنعمل معاً على مشروعك القادم</h2>
+            <p style="margin-bottom: 30px; color: #94a3b8;">هل لديك فكرة مشروع أو منصة تريد إطلاقها؟ أنا هنا لمساعدتك في تحويلها إلى واقع ملموس.</p>
+            <a href="mailto:your-email@example.com" class="btn-primary">أرسل لي رسالة بريدية</a>
+        </section>
+    </div>
+
+    <!-- التذييل -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 | تم التطوير بكل شغف عبر <a href="#">GitHub Pages</a></p>
+    </footer>
 
 </body>
 </html>
